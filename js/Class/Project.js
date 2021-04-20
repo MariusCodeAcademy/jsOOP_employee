@@ -20,7 +20,7 @@ class Project {
     return this.#title;
   }
   get price() {
-    return this.#price;
+    return this.#price + this.bonus;
   }
   get projectDone() {
     return this.#projectDone;

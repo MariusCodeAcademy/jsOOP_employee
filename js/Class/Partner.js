@@ -24,16 +24,16 @@ class Partner extends Person {
     //filter
     // gaunu sarasa kuriame yra tik done projektai
     let doneProjektai = this.#currentProjects.filter((prObj) => prObj.projectDone === true);
-    console.log("doneProjektai", doneProjektai);
+    // console.log("doneProjektai", doneProjektai);
 
     // paskaiciuoju bendra visu projektu kaina
     let moketinaSuma = doneProjektai.reduce((total, prObj) => total + prObj.price, 0);
-    console.log("moketinaSuma", moketinaSuma);
+    // console.log("moketinaSuma", moketinaSuma);
 
     // gale turi likti currentProjects tik tie el kuriu done yra lygu false
-    console.table(this.#currentProjects);
+    // console.table(this.#currentProjects);
     this.#currentProjects = this.#currentProjects.filter((prObj) => prObj.projectDone === false);
-    console.table(this.#currentProjects);
+    // console.table(this.#currentProjects);
     // grazinti moketina suma
     return moketinaSuma;
   }

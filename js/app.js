@@ -14,12 +14,14 @@ let p2Data = {
 };
 // Employee =========================================================================
 const e1 = new Emploee(p1Data, 10);
+const e2 = new Emploee(p2Data, 20);
 console.log("e1", e1);
 
+e2.work(50);
 e1.work(50);
 e1.work(100);
 console.log("e1", e1);
-console.log("atlyginimas", e1.calcPay());
+// console.log("atlyginimas", e1.calcPay());
 
 // Project =========================================================================
 
@@ -61,4 +63,9 @@ part1.finishOneOfProjects("prcj_2");
 part1.finishOneOfProjects("prcj_3");
 part1.finishOneOfProjects("prcj_4");
 // part1.finishOneOfProjects("prcj_22323");
-console.log(part1.calcPay());
+// console.log(part1.calcPay());
+console.clear();
+[e1, e2, part1].forEach((drb) => {
+  //   debugger;
+  console.log(`${drb.fullName} atlyginimas: ${drb.calcPay()}`);
+});

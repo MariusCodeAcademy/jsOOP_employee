@@ -9,7 +9,15 @@ class Partner extends Person {
     }
   }
   //   finishProject() - pabaigia konkretu darba
-  finishOneOfProjects(norimoPabaigtiProjektoId) {}
+  finishOneOfProjects(norimoPabaigtiProjektoId) {
+    // surasti projekta kurio id yra norimoPabaigtiProjektoId
+    let iFoundThis = this.#currentProjects.find((projectObj) => projectObj.id === norimoPabaigtiProjektoId);
+    if (iFoundThis === undefined) throw new Error("projekto su tokiu id nera: " + norimoPabaigtiProjektoId);
+    // console.log("iFoundThis", iFoundThis);
+    // cia mes jau turim rade konkretu objekta
+    // iskviesti jam finisjProject metoda
+    iFoundThis.finishProject();
+  }
   // pasiziureti i musu turimu darbu sarasa. pasiimti visus darbu kurie yra baigti
   // paskaiciuoti pinigus ir istrinti darbus
   calcPay() {}

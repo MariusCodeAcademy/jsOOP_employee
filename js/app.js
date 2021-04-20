@@ -12,3 +12,4 @@ console.clear();
 console.log(part1);
 
 part1.finishOneOfProjects("prcj_2");
+// part1.finishOneOfProjects("prcj_22323");

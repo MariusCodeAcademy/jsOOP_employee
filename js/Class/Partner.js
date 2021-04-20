@@ -20,5 +20,10 @@ class Partner extends Person {
   }
   // pasiziureti i musu turimu darbu sarasa. pasiimti visus darbu kurie yra baigti
   // paskaiciuoti pinigus ir istrinti darbus
-  calcPay() {}
+  calcPay() {
+    //filter
+    // gaunu sarasa kuriame yra tik done projektai
+    // paskaiciuoju bendra visu projektu kaina
+    // gale turi likti currentProjects tik tie el kuriu done yra lygu false
+  }
 }

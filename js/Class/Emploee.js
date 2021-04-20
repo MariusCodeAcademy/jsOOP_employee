@@ -23,11 +23,3 @@ class Emploee extends Person {
     return toPayAmount;
   }
 }
-
-const e1 = new Emploee(p1Data, 10);
-console.log("e1", e1);
-
-e1.work(50);
-e1.work(100);
-console.log("e1", e1);
-console.log("atlyginimas", e1.calcPay());

@@ -30,7 +30,3 @@ class Project {
     this.#projectDone = true;
   }
 }
-const pr1 = new Project("Headeris", 100);
-const pr2 = new Project("Mobile menu", 100, 30);
-// pr1.finishProject();
-console.log(pr1, pr2);

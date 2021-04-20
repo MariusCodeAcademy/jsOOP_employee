@@ -12,6 +12,10 @@ class Person {
     this.sex = sex;
   }
 
+  get fullName() {
+    return this.name + " " + this.surname;
+  }
+
   calcPay() {} // ipareigojam vaikines klases aprasyti darbo apmokejimo logika
 }
 let p1Data = {

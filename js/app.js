@@ -101,4 +101,3 @@ const html1 = new GenHtml();
 // html1.addObject({ name: "James" });
 [e1, e2, e3, part1, part2].forEach((prsn) => html1.addObject(prsn));
 html1.generateTable();
-html1.outPutHtml();

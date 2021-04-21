@@ -32,6 +32,7 @@ class GenHtml {
         `;
     // console.log("tableString", tableString);
     this.generatedHtmlString = tableString;
+    this.outPutHtml();
     // return "All is good";
   }
   genElutes() {

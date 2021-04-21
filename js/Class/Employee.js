@@ -1,5 +1,5 @@
 "use strict";
-class Emploee extends Person {
+class Employee extends Person {
   #hourlyPay;
   #hoursWorked = 0;
   constructor(personData, hourlyPay) {

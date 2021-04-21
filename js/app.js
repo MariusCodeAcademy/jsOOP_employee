@@ -13,10 +13,21 @@ let p2Data = {
   sex: "male",
 };
 // Employee =========================================================================
-const e1 = new Emploee(p1Data, 10);
-const e2 = new Emploee(p2Data, 20);
+const e1 = new Employee(p1Data, 10);
+const e2 = new Employee(p2Data, 20);
+const e3 = new Employee(
+  {
+    name: "Bob",
+    surname: "Marley",
+    idCode: 3455333,
+    age: 54,
+    sex: "male",
+  },
+  17
+);
 console.log("e1", e1);
 
+e3.work(75);
 e2.work(50);
 e1.work(50);
 e1.work(100);
@@ -34,7 +45,7 @@ const newProjects = [
   new Project("About us page", 430, 50),
 ];
 // pr1.finishProject();
-console.log(pr1, pr2);
+// console.log(pr1, pr2);
 
 // Partner =========================================================================
 
@@ -45,29 +56,48 @@ const part1 = new Partner({
   age: 40,
   sex: "female",
 });
+
+const part2 = new Partner({
+  name: "Michell",
+  surname: "Brooks",
+  idCode: 110191818,
+  age: 37,
+  sex: "female",
+});
 // prideti projektus pr1 ir pr2
 part1.addProject(pr1);
-part1.addProject(pr2);
+newProjects.forEach((pr) => part1.addProject(pr));
 
 // part1.addProject(newProjects[0]);
 // part1.addProject(newProjects[1]);
 // part1.addProject(newProjects[2]);
 // part1.addProject(newProjects[3]);
 
-newProjects.forEach((pr) => part1.addProject(pr));
+part2.addProject(pr2);
+newProjects.forEach((pr, i) => (i > 1 ? part2.addProject(pr) : false));
 
 console.clear();
 console.log(part1);
+console.log(part2);
 
-part1.finishOneOfProjects("prcj_2");
+part1.finishOneOfProjects("prcj_1");
 part1.finishOneOfProjects("prcj_3");
-part1.finishOneOfProjects("prcj_4");
+
+part2.finishOneOfProjects("prcj_2");
+part2.finishOneOfProjects("prcj_5");
+part2.finishOneOfProjects("prcj_6");
 // part1.finishOneOfProjects("prcj_22323");
 // console.log(part1.calcPay());
-console.clear();
-[e1, e2, part1].forEach((drb) => {
+// console.clear();
+[e1, e2, e3, part1, part2].forEach((drb) => {
   //   debugger;
   console.log(`${drb.fullName} atlyginimas: ${drb.calcPay()}`);
 });
 
 const html1 = new GenHtml();
+
+// html1.addObject(e1);
+// html1.addObject(part1);
+// html1.addObject({ name: "James" });
+[e1, e2, e3, part1, part2].forEach((prsn) => html1.addObject(prsn));
+console.log("html1", html1);

@@ -69,3 +69,5 @@ console.clear();
   //   debugger;
   console.log(`${drb.fullName} atlyginimas: ${drb.calcPay()}`);
 });
+
+const html1 = new GenHtml();

@@ -6,7 +6,7 @@
 class GenHtml {
   constructor() {
     this.personsArray = [];
-    this.generatedHtmlString = "<h2>Yes it Does!!!</h2>";
+    this.generatedHtmlString = "";
   }
   // patikrtinti ar tinkami ir prideti jei tinkami, jei ne atspausdinti klaida
   addObject(obj) {
@@ -15,8 +15,9 @@ class GenHtml {
   }
   // is saraso personsArray sugeneruojam lentele
   generateTable() {
-    let lentelesEilutes = "";
-    // let lentelesHeaderiai = ['id', 'Vardas, Pavarde', "Atlygis (Eur)"].
+    let lentelesEilutes = this.genElutes();
+    let lentelesHeaderiai = ["id", "Vardas, Pavarde", "Atlygis (Eur)"].map((el) => `<th>${el}</th>`).join("");
+    // let lentelesHeaderiai = "";
     let tableString = `
         <table>
         <thead>
@@ -29,6 +30,29 @@ class GenHtml {
         </tbody>
         </table>
         `;
+    // console.log("tableString", tableString);
+    this.generatedHtmlString = tableString;
+    // return "All is good";
+  }
+  genElutes() {
+    /**
+       * <tr>
+            <td>prs1</td>
+            <td>Jonas jonauskas</td>
+            <td>500 Eur</td>
+        </tr>
+       */
+    let resultString = "";
+    this.personsArray.forEach((personObj) => {
+      resultString += `
+      <tr>
+        <td>${personObj.id}</td>
+        <td>${personObj.fullName}</td>
+        <td>${personObj.calcPay()}</td>
+      </tr>
+      `;
+    });
+    return resultString;
   }
   outPutHtml() {
     let divEl = document.createElement("div");

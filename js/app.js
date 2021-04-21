@@ -89,10 +89,10 @@ part2.finishOneOfProjects("prcj_6");
 // part1.finishOneOfProjects("prcj_22323");
 // console.log(part1.calcPay());
 // console.clear();
-[e1, e2, e3, part1, part2].forEach((drb) => {
-  //   debugger;
-  console.log(`${drb.fullName} atlyginimas: ${drb.calcPay()}`);
-});
+// [e1, e2, e3, part1, part2].forEach((drb) => {
+//   //   debugger;
+//   console.log(`${drb.fullName} atlyginimas: ${drb.calcPay()}`);
+// });
 
 const html1 = new GenHtml();
 
@@ -100,4 +100,5 @@ const html1 = new GenHtml();
 // html1.addObject(part1);
 // html1.addObject({ name: "James" });
 [e1, e2, e3, part1, part2].forEach((prsn) => html1.addObject(prsn));
-console.log("html1", html1);
+html1.generateTable();
+html1.outPutHtml();
